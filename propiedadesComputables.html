@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="computed">
+        <h1>{{titulo}}</h1>
+
+
+
+        <h3> Cantidad 1: {{num1}}</h3>
+        <p>
+        <h3>Cantidad 2: {{num2}}</h3>
+        <p>
+
+        <h3>Total Suma: {{suma}}</h3>
+
+        <h3>Resultado Multiplicacion: {{ multiplica}}</h3>
+        <h3>Resultado2 Division: {{dividir}}</h3>
+
+        <h1>COMPUTED CON TEXTO</h1>
+        <h3>Texto a invertir: {{mj}}</h3>
+        <h3>El texto inv es: {{parrafo}}</h3>
+
+
+
+    </div>
+
+</body>
+<script>
+    const computados = {
+        data() {
+            return {
+                definicion: '',
+                titulo: "PROPIEDADES COMPUTADAS",
+                num1: 100,
+                num2: 50,
+                total: 0,
+                resultado: 1,
+                resultado2: 1,
+                contando: 0,
+                mj: 'HOLA ADSI CTPI SENA',
+
+
+            };
+        },
+        computed: {
+            suma() {
+                this.total = 0,
+                    this.total = this.num1 + this.num2;
+                return this.total;
+
+            },
+
+            multiplica() {
+                this.resultado = 1,
+                    this.resultado = this.num1 * this.num2;
+                return this.resultado;
+            },
+
+            dividir() {
+                this.resultado2 = 1,
+                    this.resultado2 = this.num1 / this.num2;
+                return this.resultado2;
+
+            },
+            parrafo() {
+                return this.mj.split('').reverse().join('');
+
+            }
+
+
+
+
+
+        },
+
+    }
+    Vue.createApp(computados).mount("#computed");
+</script>
+
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Las props Ejemplo </h1>
+    <hr>
+    <section id="fer">
+        <h2>Presentado por : </h2>
+        <h2>{{nom}}</h2>
+        <h2>{{nom1}}</h2>
+        <h2>{{nom2}}</h2>
+        <h2>{{nom3}}</h2>
+        <h2>Ficha : {{fec}}</h2>
+        <h2>Instructor :{{ins}}</h2>
+        <h2> Jornada : {{jor}} </h2>
+        <h2>{{ads}}</h2>
+        <hr>
+        <Label>Presentado por :</Label> <input type="text" placeholder="Nombre">
+
+    </section>
+
+    <script>
+        let props = {
+            data() {
+                return {
+                    nom: "Sofia Castro",
+                    nom1: " ferney figueroa ",
+                    nom2: "Andres  Felipe",
+                    nom3: "Victor Manuel",
+                    fec: 2452442,
+                    jor: "tarde",
+                    ads: "ADSI 3",
+                    ins: "pablo ortiz"
+
+                };
+            },
+            props: {
+                nom: String,
+                nom1: String,
+                nom2: String,
+                nom3: String,
+                fec: Number,
+                jornada: String,
+                ads: String,
+                ins: String,
+            }
+
+        }
+        Vue.createApp(props).mount("#fer");
+    </script>
+</body>
+
+</html>

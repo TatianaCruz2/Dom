@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/style.css" rel="stylesheet">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <style>
+        body {
+            background-color: white;
+            text-align: center;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div id="r">
+        METODO 1<p>
+            <button v-on:click="increment()" style="background-color: pink;">CONTAR</button><br><br>
+            <button v-on:click="splice(count=0, sumar=0, n1=0, n2=0)"
+                style="background-color: rgb(75, 208, 133);">Eliminar</button>
+
+        <p>{{count}}</p>
+
+        METODO 2<p>
+            Ingrese Primer Número: <br><br>
+            <input type="number" v-model="n1"><br /> <br>
+            Ingrese Segundo Número: <br>
+            <input type="number" v-model="n2"><br /> <br>
+            <button v-on:click="suma()" style="background-color: rgb(75, 208, 197);">sumar</button> <br> <br>
+            <!-- <button v-on:click="splice(sumar=0)" style="background-color: rgb(75, 208, 133);">Eliminar</button> -->
+
+
+        <p>la suma es : {{ sumar}}</p>
+
+    </div>
+
+
+    <script>
+        const app = {
+            data() {
+                return {
+                    count: 0,
+                    n1: "",
+                    n2: "",
+                    sumar: ""
+
+                }
+
+            },
+
+            methods: {
+                increment() {
+                    this.count++
+                },
+
+                suma() {
+                    this.sumar = this.n1 + this.n2
+                }
+            },
+            eliminar() {
+                this.splice(count);
+                this.splice(sumar);
+
+
+            }
+
+
+        }
+        Vue.createApp(app).mount("#r");
+    </script>
+
+    <body />
